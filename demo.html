@@ -1,0 +1,33 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="btn">选择图片</button>
+  <button id="btn2">展示截图</button>
+  <div id="ImgDiv"></div>
+</body>
+
+<script type="module">
+  import screenshots from './screenshots.js';
+  document.getElementById('btn').addEventListener('click', () => {
+    screenshots.uploadImg();
+  })
+  document.getElementById('btn2').addEventListener('click', () => {
+    let IMG = screenshots.getNewImg();
+    console.log(IMG.src);
+    document.getElementById('ImgDiv').appendChild(IMG);
+  })
+</script>
+
+</html>
